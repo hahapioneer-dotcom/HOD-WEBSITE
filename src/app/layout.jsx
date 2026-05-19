@@ -1,12 +1,18 @@
-import { Inter } from 'next/font/google';
+import { Hanken_Grotesk, Archivo_Narrow } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import './globals.css';
 
-const inter = Inter({
+const hanken = Hanken_Grotesk({
     subsets: ['latin'],
-    variable: '--font-sans',
+    variable: '--font-hanken',
+    display: 'swap',
+});
+
+const archivo = Archivo_Narrow({
+    subsets: ['latin'],
+    variable: '--font-archivo',
     display: 'swap',
 });
 
@@ -24,8 +30,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
+        <html suppressHydrationWarning lang="en" className={`${hanken.variable} ${archivo.variable}`}>
+            <body className="font-archivo">
                 <div className="grain-overlay" />
                 <Header />
                 <PageTransition>

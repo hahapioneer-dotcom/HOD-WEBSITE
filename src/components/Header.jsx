@@ -17,23 +17,24 @@ export default function Header() {
         setMobileMenuOpen(false);
     };
 
-    const isHomePage = pathname === '/';
-
     return (
-        <header className={`header ${isHomePage ? 'header-home' : ''}`}>
+        <header className="header">
             <div className="container header-content">
-                {/* Desktop logo - hidden on mobile */}
-                <Link href="/" className="logo desktop-logo">
-                    House of Directors
+                {/* Desktop logo */}
+                <Link href="/" className="logo">
+                    HOUSE OF DIRECTORS
                 </Link>
 
                 {/* Desktop navigation */}
                 <nav className="nav desktop-nav">
-                    <Link href="/">Home</Link>
-                    <Link href="/work">Work</Link>
-                    <Link href="/about">About</Link>
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/work" className={`nav-link ${pathname === '/work' ? 'active' : ''}`}>WORK</Link>
+                    <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>ABOUT</Link>
+                    <Link href="/contact" className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}>CONTACT</Link>
                 </nav>
+
+                <div className="header-actions desktop-only">
+                    <Link href="/contact" className="button hover-invert">START PROJECT</Link>
+                </div>
 
                 {/* Mobile hamburger icon */}
                 <button
@@ -41,25 +42,27 @@ export default function Header() {
                     onClick={toggleMenu}
                     aria-label="Toggle menu"
                 >
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span className="line"></span>
+                    <span className="line"></span>
                 </button>
 
                 {/* Mobile slide-in menu */}
                 <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-                    <button
-                        className="mobile-menu-close"
-                        onClick={closeMenu}
-                        aria-label="Close menu"
-                    >
-                        ×
-                    </button>
+                    <div className="mobile-menu-header">
+                        <span className="logo">HOD</span>
+                        <button
+                            className="mobile-menu-close"
+                            onClick={closeMenu}
+                            aria-label="Close menu"
+                        >
+                            ✕
+                        </button>
+                    </div>
                     <nav className="mobile-nav">
-                        <Link href="/" onClick={closeMenu}>Home</Link>
-                        <Link href="/work" onClick={closeMenu}>Work</Link>
-                        <Link href="/about" onClick={closeMenu}>About</Link>
-                        <Link href="/contact" onClick={closeMenu}>Contact</Link>
+                        <Link href="/" onClick={closeMenu}>HOME</Link>
+                        <Link href="/work" onClick={closeMenu}>WORK</Link>
+                        <Link href="/about" onClick={closeMenu}>ABOUT</Link>
+                        <Link href="/contact" onClick={closeMenu}>CONTACT</Link>
                     </nav>
                 </div>
 

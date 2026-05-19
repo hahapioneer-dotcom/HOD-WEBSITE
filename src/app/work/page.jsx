@@ -45,13 +45,10 @@ export default function Work() {
     return (
         <div className="work-page">
             {/* Page Header */}
-            <section className="page-header">
+            <section className="page-header border-b">
                 <div className="container">
-                    <h1>Our Work</h1>
-                    <p className="page-subtitle">
-                        A collection of cinematic storytelling crafted for brands, businesses,
-                        and educational institutions across India and beyond.
-                    </p>
+                    <span className="label-caps block mb-unit opacity-60">ARCHIVE / PROJECTS</span>
+                    <h1 className="manifesto-heading">SELECTED WORKS</h1>
                 </div>
             </section>
 
@@ -59,23 +56,24 @@ export default function Work() {
             {categories.map((category, index) => (
                 <section key={index} className="section category-section">
                     <div className="container">
-                        <h2 className="category-title">{category.title}</h2>
-                        <div className="grid grid-3 work-grid">
-                            {category.works.map((work) => (
-                                <div key={work.id} className="work-item">
+                        <div className="flex-between border-b pb-unit mb-gutter">
+                            <h2 className="category-title">{category.title}</h2>
+                            <span className="label-caps">[ {category.works.length} ENTRIES ]</span>
+                        </div>
+                        <div className="grid grid-cols-4 md:grid-cols-12 brutalist-grid gap-0">
+                            {category.works.map((work, idx) => (
+                                <div key={work.id} className={`col-span-4 work-card group grid-cell-border aspect-square relative ${idx % 3 === 1 ? 'md-mt-negative bg-surface' : ''}`}>
                                     <div className="work-thumbnail">
                                         <div className="video-placeholder">
                                             <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="30" cy="30" r="29" stroke="white" strokeWidth="2" />
-                                                <path d="M24 20L40 30L24 40V20Z" fill="white" />
+                                                <circle cx="30" cy="30" r="29" stroke="var(--color-primary)" strokeWidth="2" />
+                                                <path d="M24 20L40 30L24 40V20Z" fill="var(--color-primary)" />
                                             </svg>
                                         </div>
-                                        <div className="work-overlay">
-                                            <span className="play-text">Watch Film</span>
-                                        </div>
                                     </div>
-                                    <div className="work-info">
-                                        <h3>{work.title}</h3>
+                                    <div className={`work-overlay ${idx % 2 === 0 ? '' : 'top-right'}`}>
+                                        <span className="label-caps block">PROJECT {work.id.toString().padStart(2, '0')}</span>
+                                        <h3 className="work-title-small">{work.title}</h3>
                                     </div>
                                 </div>
                             ))}

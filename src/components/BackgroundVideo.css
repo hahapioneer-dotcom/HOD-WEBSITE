@@ -19,6 +19,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    filter: grayscale(100%);
+    opacity: 0.5;
 }
 
 .hero-video {
@@ -26,14 +28,14 @@
     user-select: none;
 }
 
-/* Subtle dark overlay for text readability - preserves video's cinematic look */
+/* Brutalist dark overlay */
 .hero-video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.15);
+    background: transparent;
     z-index: 1;
     pointer-events: none;
 }

@@ -1,0 +1,46 @@
+/* Directional fade page transition */
+
+/* Page exit - fade out with subtle motion */
+.page-exit {
+    animation: pageExit 0.25s ease-out forwards;
+}
+
+@keyframes pageExit {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+}
+
+/* Page enter - fade in with subtle motion */
+.page-enter {
+    animation: pageEnter 0.25s ease-out forwards;
+}
+
+@keyframes pageEnter {
+    0% {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Disable animations when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+
+    .page-exit,
+    .page-enter {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}

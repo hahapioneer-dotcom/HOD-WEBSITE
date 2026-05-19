@@ -1,0 +1,37 @@
+.focus-title {
+    position: relative;
+    display: inline-block;
+}
+
+.focus-title .letter {
+    display: inline-block;
+    transition: filter 0.15s ease-out;
+    will-change: filter;
+}
+
+.focus-title .space {
+    display: inline-block;
+    pointer-events: none;
+}
+
+/* Ensure smooth rendering */
+.focus-title.desktop .letter {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Prevent layout shift */
+.focus-title .letter,
+.focus-title .space {
+    vertical-align: baseline;
+    line-height: inherit;
+}
+
+/* Mobile: ensure single line */
+@media (max-width: 768px) {
+    .focus-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,198 @@
+/* Hero Section */
+.hero {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-peach-light) 0%, var(--color-lavender-light) 50%, var(--color-sky-light) 100%);
+    isolation: isolate;
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    margin-bottom: var(--spacing-sm);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #ffffff;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.hero .button {
+    margin-top: var(--spacing-md);
+}
+
+/* Intro Section */
+.intro-section {
+    background: linear-gradient(180deg, var(--color-mint-light) 0%, var(--color-sky-light) 100%);
+    border-top: 1px solid rgba(149, 225, 211, 0.3);
+    border-bottom: 1px solid rgba(168, 216, 234, 0.3);
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-content h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+}
+
+.intro-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    max-width: 100%;
+}
+
+/* Work Preview Section */
+.work-preview-section {
+    background-color: var(--color-warm-bg);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+    color: var(--color-text-primary);
+}
+
+.view-all-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-coral);
+    transition: transform var(--transition-base);
+    display: inline-block;
+}
+
+.view-all-link:hover {
+    transform: translateX(8px);
+    opacity: 1;
+}
+
+.work-grid {
+    gap: var(--spacing-lg);
+}
+
+.work-item {
+    cursor: pointer;
+    transition: transform var(--transition-base);
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.work-item:nth-child(1) {
+    background: linear-gradient(135deg, var(--color-coral-light) 0%, var(--color-peach-light) 100%);
+}
+
+.work-item:nth-child(2) {
+    background: linear-gradient(135deg, var(--color-mint-light) 0%, var(--color-sky-light) 100%);
+}
+
+.work-item:nth-child(3) {
+    background: linear-gradient(135deg, var(--color-lavender-light) 0%, var(--color-sky-light) 100%);
+}
+
+.work-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.work-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    transition: opacity var(--transition-base);
+}
+
+.video-placeholder svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.video-placeholder circle,
+.video-placeholder path {
+    stroke: var(--color-text-primary);
+    fill: var(--color-text-primary);
+}
+
+.work-item:hover .video-placeholder {
+    opacity: 0.7;
+}
+
+.work-info {
+    padding: var(--spacing-md);
+}
+
+.work-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.work-category {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero-title,
+    .hero-tagline {
+        color: #000000;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .work-grid {
+        gap: var(--spacing-md);
+    }
+}

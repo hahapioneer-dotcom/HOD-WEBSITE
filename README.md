@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # House of Director
 
 Premium cinematic portfolio website for a creative video production studio.
@@ -130,3 +131,7 @@ To embed actual videos, replace the SVG placeholders with your video embed code 
 ## License
 
 © 2026 House of Director. All rights reserved.
+=======
+# HOD-WEBSITE
+HOD WEBSITE 
+>>>>>>> edbfc30a21d82e27a913e49a413da43e6f6aedd5
